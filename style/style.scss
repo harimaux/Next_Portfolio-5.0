@@ -10,11 +10,17 @@ $whiteFont: rgb(216, 216, 216);
 $whiteArrow: rgba(216, 216, 216, 0.267);
 
 body {
-  background-image: linear-gradient(to right, rgb(47, 61, 85), rgb(47, 61, 85));
+  /* background-image: linear-gradient(to right, rgb(47, 61, 85), rgb(47, 61, 85)); */
+  background-image: linear-gradient(to right, rgb(87, 87, 87), rgb(47, 61, 85));
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   color: $whiteFont;
   overflow-x: hidden;
+
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
 }
 
 /* ---------------- LOADING SCREEN ---------------- */
@@ -312,6 +318,46 @@ nav {
   }
 }
 
+.topDigitsContainer2 {
+  width: 25%;
+  height: 80%;
+  position: absolute;
+  right: 250px;
+  top: -50px;
+  transform: rotate(136deg);
+}
+
+.topDigitsAnimation2 {
+  animation: topDigitsAnimationFrames2 6s ease-in-out forwards;
+  position: absolute;
+  color: red;
+  font-size: 24px;
+  text-shadow:
+    0 0 7px red,
+    0 0 10px red,
+    0 0 21px red,
+}
+
+@keyframes topDigitsAnimationFrames2 {
+  0% {
+    opacity: 70vh;
+    transform: translateY(0);
+  }
+
+  25% {
+    opacity: 1;
+  }
+
+  75% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+}
+
 .topTechSkills {
 
   position: absolute;
@@ -320,7 +366,7 @@ nav {
   z-index: -5;
 
   img {
-    width: 90px;
+    width: 80px;
   }
 
   div {
@@ -361,7 +407,9 @@ nav {
   position: absolute;
   bottom: 5vh;
   margin-left: 50%;
+  transition: 1s ease-in-out;
   transform: translateX(-50%);
+  
 
   a {
     color: $whiteArrow;
@@ -377,15 +425,116 @@ nav {
   border-radius: 50%;
   border: solid 1px $whiteArrow;
   z-index: -5;
+  animation: circlePulse 3s ease-in-out infinite;
+}
+
+@keyframes circlePulse {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.08);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 1085px) {
+
+  .topText {
+    width: auto;
+    padding-top: 0;
+    margin-left: 0;
+    padding: 2rem;
+    text-align: center;
+    width: 80%;
+    margin: auto;
+  }
+
+  .topBackground {
+    top: unset;
+    right: unset;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    opacity: 0.2;
+  }
+
+  .topDigitsContainer2 {
+    display: none;
+  }
+
+  .topDigitsContainer {
+    width: 50%;
+    height: 20%;
+    right: unset;
+    top: 28%;
+    left: 50%;
+    transform: rotate(0) translateX(-50%);
+  }
+
+  .topDigitsAnimation {
+    font-size: 14px;
+  }
+  
+  @keyframes topDigitsAnimationFrames {
+    0% {
+      opacity: 0;
+      transform: translateY(0);
+    }
+  
+    25% {
+      opacity: 1;
+    }
+  
+    75% {
+      opacity: 1;
+    }
+  
+    100% {
+      opacity: 0;
+      transform: translateY(20vh);
+    }
+  }
+
+  .topTechSkills {
+    left: unset;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    top: 60%;
+  
+    img {
+      width: 60px;
+    }
+  
+    div {
+      width: 380px;
+    }
+  
+    @for $i from 1 through 12 {
+      li:nth-child(#{$i}) {
+        transform: translate(-50%, -50%) rotate(#{$i * 30 - 30}deg) translateY(-160px) rotateX(90deg);
+      }
+    }
+  }
+  
+  .topMoveDownCircle {
+    transform: translateX(-50%) scale(0.6);
+  }
 }
 
 /* ---------------- ABOUT PAGE ---------------- */
 
 #about {
   height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.abouText {
+.aboutText {
   width: 300px;
   padding-top: 7rem;
   margin-left: 7rem;
@@ -412,5 +561,16 @@ nav {
 
   img {
     width: 200px;
+  }
+}
+
+.aboutGallery {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  grid-auto-rows: minmax(min-content, max-content);
+  justify-content: center;
+
+  img {
+    width: 300px;
   }
 }

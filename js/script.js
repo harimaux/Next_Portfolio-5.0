@@ -62,21 +62,34 @@ document.onreadystatechange = () => {
     //Top page
 
     const topDigitsDiv = document.querySelector(".topDigits");
+    const topDigitsDiv2 = document.querySelector(".topDigits2");
     setInterval(topDigitsFunction, 200);
 
     function topDigitsFunction() {
       const newDigit = document.createElement("div");
+      const newDigit2 = document.createElement("div");
       let randomNumber = Math.floor(Math.random() * 2);
       let randomPosition = Math.floor(Math.random() * topDigitsDiv.clientWidth);
+      let randomPosition2 = Math.floor(
+        Math.random() * topDigitsDiv2.clientWidth
+      );
       newDigit.setAttribute("class", "topDigitsAnimation");
       newDigit.style = `margin-left: ${randomPosition}px`;
       newDigit.innerHTML = `${randomNumber}`;
+      newDigit2.setAttribute("class", "topDigitsAnimation");
+      newDigit2.style = `margin-left: ${randomPosition2}px`;
+      newDigit2.innerHTML = `${randomNumber}`;
       topDigitsDiv.appendChild(newDigit);
+      topDigitsDiv2.appendChild(newDigit2);
 
       let countCreatedDivs = topDigitsDiv.getElementsByTagName("div").length;
+      let countCreatedDivs2 = topDigitsDiv2.getElementsByTagName("div").length;
 
       if (countCreatedDivs > 40) {
         topDigitsDiv.removeChild(topDigitsDiv.firstChild);
+      }
+      if (countCreatedDivs2 > 40) {
+        topDigitsDiv2.removeChild(topDigitsDiv2.firstChild);
       }
     }
   }
