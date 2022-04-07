@@ -1,8 +1,12 @@
+document.body.style.overflowY = "hidden";
+
 document.onreadystatechange = () => {
   if (document.readyState === "complete") {
     // document ready
     // hide loading screen
     $(".loader").fadeOut(500);
+    $("nav").css({ display: "flex" });
+    document.body.style.overflowY = "unset";
 
     // Select all links with hashes
     $('a[href*="#"]')
@@ -54,5 +58,26 @@ document.onreadystatechange = () => {
     mobileBtn.addEventListener("click", () => {
       nav.classList.toggle("navToggle");
     });
+
+    //Top page
+
+    const topDigitsDiv = document.querySelector(".topDigits");
+    setInterval(topDigitsFunction, 200);
+
+    function topDigitsFunction() {
+      const newDigit = document.createElement("div");
+      let randomNumber = Math.floor(Math.random() * 2);
+      let randomPosition = Math.floor(Math.random() * topDigitsDiv.clientWidth);
+      newDigit.setAttribute("class", "topDigitsAnimation");
+      newDigit.style = `margin-left: ${randomPosition}px`;
+      newDigit.innerHTML = `${randomNumber}`;
+      topDigitsDiv.appendChild(newDigit);
+
+      let countCreatedDivs = topDigitsDiv.getElementsByTagName("div").length;
+
+      if (countCreatedDivs > 40) {
+        topDigitsDiv.removeChild(topDigitsDiv.firstChild);
+      }
+    }
   }
 };
