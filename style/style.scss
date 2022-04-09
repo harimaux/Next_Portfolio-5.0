@@ -184,7 +184,7 @@ nav {
   .mobileBtnContainer {
     display: flex;
     flex-direction: column;
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 20px;
     cursor: pointer;
@@ -383,20 +383,24 @@ nav {
     transform-style: preserve-3d;
     animation: three-dimensions-circle 30s linear infinite;
   }
+
   li {
     position: absolute;
     top: 50%;
     left: 50%;
   }
+
   @for $i from 1 through 12 {
     li:nth-child(#{$i}) {
       transform: translate(-50%, -50%) rotate(#{$i * 30 - 30}deg) translateY(-260px) rotateX(90deg);
     }
   }
+
   @keyframes three-dimensions-circle {
     0% {
       transform: rotateX(-100deg) rotate(0);
     }
+
     100% {
       transform: rotateX(-100deg) rotate(-360deg);
     }
@@ -409,7 +413,7 @@ nav {
   margin-left: 50%;
   transition: 1s ease-in-out;
   transform: translateX(-50%);
-  
+
 
   a {
     color: $whiteArrow;
@@ -478,21 +482,21 @@ nav {
   .topDigitsAnimation {
     font-size: 14px;
   }
-  
+
   @keyframes topDigitsAnimationFrames {
     0% {
       opacity: 0;
       transform: translateY(0);
     }
-  
+
     25% {
       opacity: 1;
     }
-  
+
     75% {
       opacity: 1;
     }
-  
+
     100% {
       opacity: 0;
       transform: translateY(20vh);
@@ -500,26 +504,27 @@ nav {
   }
 
   .topTechSkills {
+    display: none;
     left: unset;
     margin-left: 50%;
     transform: translateX(-50%);
     top: 60%;
-  
+
     img {
       width: 60px;
     }
-  
+
     div {
       width: 380px;
     }
-  
+
     @for $i from 1 through 12 {
       li:nth-child(#{$i}) {
         transform: translate(-50%, -50%) rotate(#{$i * 30 - 30}deg) translateY(-160px) rotateX(90deg);
       }
     }
   }
-  
+
   .topMoveDownCircle {
     transform: translateX(-50%) scale(0.6);
   }
@@ -528,14 +533,11 @@ nav {
 /* ---------------- ABOUT PAGE ---------------- */
 
 #about {
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  position: relative;
 }
 
 .aboutText {
-  width: 300px;
+  width: 330px;
   padding-top: 7rem;
   margin-left: 7rem;
 
@@ -558,19 +560,62 @@ nav {
   position: absolute;
   bottom: -30px;
   left: 320px;
+  z-index: 1;
 
   img {
     width: 200px;
   }
 }
 
-.aboutGallery {
+.aboutImagesGrid {
   display: grid;
-  grid-template-columns: auto auto auto;
-  grid-auto-rows: minmax(min-content, max-content);
-  justify-content: center;
+  /* grid-template-columns: repeat(4, 25% [col-start]); */
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  /* grid-template-rows: repeat(2, 500px [row-start]); */
+  z-index: -1;
+}
 
+.aboutCell {
+  overflow: hidden;
   img {
-    width: 300px;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: all 1.5s ease-out;
+    filter: brightness(0.9) saturate(0.8);
   }
+
+  img:hover {
+    transform: scale(1.07);
+    filter: saturate(1);
+  }
+}
+
+.aboutAnimeImage {
+  animation: aboutAnimate 2s ease-in-out;
+}
+
+@keyframes aboutAnimate {
+  0% {
+    filter: saturate(0);
+  }
+
+  25% {
+    filter: saturate(1);
+  }
+  50% {
+    filter: saturate(1);
+  }
+  75% {
+    filter: saturate(1);
+  }
+  100% {
+    filter: saturate(0);
+  }
+}
+
+/* ---------------- PROJECTS PAGE ---------------- */
+
+#projects {
+  height: 100vh;
 }

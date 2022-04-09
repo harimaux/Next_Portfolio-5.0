@@ -225,7 +225,7 @@ nav a:hover {
     -webkit-box-direction: normal;
         -ms-flex-direction: column;
             flex-direction: column;
-    position: absolute;
+    position: fixed;
     right: 20px;
     top: 20px;
     cursor: pointer;
@@ -684,6 +684,7 @@ nav a:hover {
     }
   }
   .topTechSkills {
+    display: none;
     left: unset;
     margin-left: 50%;
     -webkit-transform: translateX(-50%);
@@ -752,20 +753,11 @@ nav a:hover {
 
 /* ---------------- ABOUT PAGE ---------------- */
 #about {
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  position: relative;
 }
 
 .aboutText {
-  width: 300px;
+  width: 330px;
   padding-top: 7rem;
   margin-left: 7rem;
 }
@@ -787,25 +779,98 @@ nav a:hover {
   position: absolute;
   bottom: -30px;
   left: 320px;
+  z-index: 1;
 }
 
 .aboutAvatar img {
   width: 200px;
 }
 
-.aboutGallery {
+.aboutImagesGrid {
   display: -ms-grid;
   display: grid;
-  -ms-grid-columns: auto auto auto;
-      grid-template-columns: auto auto auto;
-  grid-auto-rows: minmax(-webkit-min-content, -webkit-max-content);
-  grid-auto-rows: minmax(min-content, max-content);
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  /* grid-template-columns: repeat(4, 25% [col-start]); */
+  -ms-grid-columns: (minmax(25%, 1fr))[auto-fit];
+      grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
+  /* grid-template-rows: repeat(2, 500px [row-start]); */
+  z-index: -1;
 }
 
-.aboutGallery img {
-  width: 300px;
+.aboutCell {
+  overflow: hidden;
+}
+
+.aboutCell img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -webkit-transition: all 1.5s ease-out;
+  transition: all 1.5s ease-out;
+  -webkit-filter: brightness(0.9) saturate(0.8);
+          filter: brightness(0.9) saturate(0.8);
+}
+
+.aboutCell img:hover {
+  -webkit-transform: scale(1.07);
+          transform: scale(1.07);
+  -webkit-filter: saturate(1);
+          filter: saturate(1);
+}
+
+.aboutAnimeImage {
+  -webkit-animation: aboutAnimate 2s ease-in-out;
+          animation: aboutAnimate 2s ease-in-out;
+}
+
+@-webkit-keyframes aboutAnimate {
+  0% {
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+  }
+  25% {
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+  }
+  50% {
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+  }
+  75% {
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+  }
+  100% {
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+  }
+}
+
+@keyframes aboutAnimate {
+  0% {
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+  }
+  25% {
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+  }
+  50% {
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+  }
+  75% {
+    -webkit-filter: saturate(1);
+            filter: saturate(1);
+  }
+  100% {
+    -webkit-filter: saturate(0);
+            filter: saturate(0);
+  }
+}
+
+/* ---------------- PROJECTS PAGE ---------------- */
+#projects {
+  height: 100vh;
 }
 /*# sourceMappingURL=style.css.map */

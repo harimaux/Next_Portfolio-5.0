@@ -5,7 +5,9 @@ document.onreadystatechange = () => {
     // document ready
     // hide loading screen
     $(".loader").fadeOut(500);
-    $("nav").css({ display: "flex" });
+    $("nav").css({
+      display: "flex",
+    });
     document.body.style.overflowY = "unset";
 
     // Select all links with hashes
@@ -92,5 +94,27 @@ document.onreadystatechange = () => {
         topDigitsDiv2.removeChild(topDigitsDiv2.firstChild);
       }
     }
+
+    //About Page
+
+    /*     const aboutImages = document.querySelectorAll(".aboutImagesGrid img");
+
+    const saturare = () => {
+      const randomImage = Math.floor(Math.random() * aboutImages.length);
+      const randomImage2 = Math.floor(Math.random() * aboutImages.length);
+      const randomImage3 = Math.floor(Math.random() * aboutImages.length);
+      aboutImages[randomImage].classList.add("aboutAnimeImage");
+      aboutImages[randomImage2].classList.add("aboutAnimeImage");
+      aboutImages[randomImage3].classList.add("aboutAnimeImage");
+      setTimeout(aboutRemoveClss, 1950);
+    };
+
+    const aboutRemoveClss = () => {
+      for (let i = 0; i < aboutImages.length; i++) {
+        aboutImages[i].classList.remove("aboutAnimeImage");
+      }
+    };
+
+    setInterval(saturare, 2000); */
   }
 };
