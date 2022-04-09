@@ -95,6 +95,14 @@ document.onreadystatechange = () => {
       }
     }
 
-    //About Page
+    //Projects
+
+    const cards = document.querySelectorAll(".cards");
+    const cardDeck = document.querySelector(".projectsCards");
+
+    $(".cards").hover(function () {
+      $(this).find("a").toggleClass("showLink");
+      $(this).find("img").toggleClass("showCardImage");
+    });
   }
 };

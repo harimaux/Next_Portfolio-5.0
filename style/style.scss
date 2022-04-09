@@ -669,7 +669,7 @@ nav {
 .cards {
   width: 100%;
   height: 150px;
-  border: solid 1px white;
+  border: solid 1px $whiteFont;
   margin-top: 7rem;
   display: flex;
   justify-content: space-between;
@@ -678,6 +678,33 @@ nav {
   h1 {
     font-size: 7vw;
     transform: translateY(25px);
+    pointer-events: none;
+  }
+}
+
+.cardActive {
+  display: flex;
+
+  a {
+    border: solid 1px $whiteFont;
+    width: 100px;
+    height: 52px;
+    padding: 0.7rem;
+    color: red;
+    text-decoration: none;
+    text-align: center;
+    transition: 0.4s ease-in-out;
+    transform: translateY(148px) translateX(100px);
+    opacity: 0;
+    text-shadow:
+    0 0 7px red,
+    0 0 10px red,
+    0 0 21px red,
+  }
+
+  .showLink {
+    opacity: 1;
+    transform: translateY(148px) translateX(0px);
   }
 }
 
@@ -685,6 +712,17 @@ nav {
   width: 300px;
   height: 200px;
   border: solid 1px white;
+  overflow: hidden;
+  transition: 1s ease-in-out;
+
+  img {
+    opacity: 0;
+  }
+
+  .showCardImage {
+    transition: 1s ease-in-out;
+    opacity: 1;
+  }
 }
 
 /* ---------------- CONTACT PAGE ---------------- */
