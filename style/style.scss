@@ -8,6 +8,7 @@
 
 $whiteFont: rgb(216, 216, 216);
 $whiteArrow: rgba(216, 216, 216, 0.267);
+$formWhite: rgba(216, 194, 194, 0.377);
 
 body {
   /* background-image: linear-gradient(to right, rgb(47, 61, 85), rgb(47, 61, 85)); */
@@ -153,7 +154,7 @@ nav {
   width: 100%;
   height: 3rem;
   background-color: rgb(99, 100, 100);
-  z-index: 10;
+  z-index: 20;
 
   ul {
     display: flex;
@@ -170,7 +171,8 @@ nav {
   }
 
   a:hover {
-    border-bottom: solid 3px rgb(120, 138, 241);
+    /* border-bottom: solid 3px rgb(120, 138, 241); */
+    border-bottom: solid 3px rgb(47, 92, 110);
     padding-bottom: 0.5rem;
   }
 }
@@ -648,18 +650,23 @@ nav {
   .aboutAvatar {
     display: none;
 }
+
+.aboutBackground {
+  display: none;
+}
 }
 
 /* ---------------- PROJECTS PAGE ---------------- */
 
 #projects {
   min-height: 100vh;
-  background-color: black;
+  background-color: rgb(31, 29, 29);
 }
 
 .projectsContainer {
   display: flex;
   justify-content: center;
+  padding-top: 100px;
 }
 
 .projectsCards {
@@ -670,16 +677,24 @@ nav {
   width: 100%;
   height: 150px;
   border: solid 1px $whiteFont;
-  margin-top: 7rem;
+  margin-top: 1rem;
   display: flex;
-  justify-content: space-between;
-  cursor: pointer;
+  justify-content: end;
+  position: relative;
 
   h1 {
-    font-size: 7vw;
-    transform: translateY(25px);
+    font-size: 90px;
+    position: absolute;
+    top: 50%;
+    left: 2rem;
+    transform: translateY(-50%);
     pointer-events: none;
+    z-index: 10;
   }
+}
+
+.cards:hover {
+  background-image: linear-gradient(#245, #2345);
 }
 
 .cardActive {
@@ -694,7 +709,7 @@ nav {
     text-decoration: none;
     text-align: center;
     transition: 0.4s ease-in-out;
-    transform: translateY(148px) translateX(100px);
+    transform: translateY(49px) translateX(100px);
     opacity: 0;
     text-shadow:
     0 0 7px red,
@@ -704,16 +719,16 @@ nav {
 
   .showLink {
     opacity: 1;
-    transform: translateY(148px) translateX(0px);
+    transform: translateY(49px) translateX(-50px);
   }
 }
 
 .card {
+  position: relative;
   width: 300px;
-  height: 200px;
-  border: solid 1px white;
+  height: 148px;
   overflow: hidden;
-  transition: 1s ease-in-out;
+  transition: 0.3s ease-in-out;
 
   img {
     opacity: 0;
@@ -725,14 +740,158 @@ nav {
   }
 }
 
+.enlargeCard {
+  width: 400px;
+}
+
+.cardTech {
+  position: absolute;
+  bottom: 0;
+
+  img {
+    width: 40px;
+    opacity: 1;
+  }
+}
+
+.cardTechHide {
+  opacity: 0;
+}
+
+@media screen and (max-width: 1550px) {
+
+  .cards {
+  
+    h1 {
+      font-size: 30px;
+    }
+  }
+
+  .enlargeCard {
+    width: 350px;
+  }
+}
+
+@media screen and (max-width: 970px) {
+
+  .cardActive {
+    display: flex;
+    position: relative;
+  
+    a {
+      position: absolute;
+      right: 50px;
+      background-color: rgb(39, 37, 37);
+      z-index: 10;
+      transform: translateY(49px) translateX(0);
+    }
+  
+    .showLink {
+      transform: translateY(49px) translateX(0);
+    }
+  }
+}
+
+@media screen and (max-width: 740px) {
+
+  .cards {
+    width: 100%;
+    overflow: hidden;
+  
+    h1 {
+      font-size: 20px;
+      padding: 0.5rem;
+    }
+  }
+
+  .cards:hover {
+    h1 {
+      background-image: linear-gradient(rgba(255, 255, 255, 0), rgb(8, 19, 31));
+    }
+  }
+
+  .card {
+    width: 100%;
+
+    img {
+      width: 600px;
+    }
+  }
+  
+  .enlargeCard {
+    width: 100%;
+  }
+}
+
+
 /* ---------------- CONTACT PAGE ---------------- */
 
 #contact {
   height: 100vh;
+  position: relative;
+  overflow: hidden;
 }
 
 .contactBackground {
   height: 100%;
   width: 100%;
-  background-image: linear-gradient(rgb(0, 0, 0), rgb(118, 137, 173));
+  position: absolute;
+  top: 0;
+  z-index: -10;
+  background-image: linear-gradient(rgb(31, 29, 29), rgb(118, 137, 173));
+}
+
+.contactText {
+  width: 300px;
+  padding-top: 7rem;
+  margin-left: 7rem;
+
+  h1 {
+    font-size: 50px;
+  }
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 40%;
+  padding-left: 7rem;
+  height: 100%;
+
+  label {
+    margin-top: 1rem;
+  }
+
+  input {
+    padding: 1rem;
+    outline: none;
+    border: solid 1px $formWhite;
+    background-color: rgba(49, 140, 185, 0.11);
+    color: $whiteFont;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+  }
+
+  textarea {
+    height: 30%;
+    outline: none;
+    border: solid 1px $formWhite;
+    background-color: rgba(49, 140, 185, 0.11);
+    color: $whiteFont;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 16px;
+    padding: 1rem;
+  }
+
+  button {
+    outline: none;
+    border: solid 1px $formWhite;
+    background-color: rgba(49, 140, 185, 0.11);
+    width: 200px;
+    padding: 1rem;
+    margin-top: 2rem;
+    color: $whiteFont;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+  }
 }

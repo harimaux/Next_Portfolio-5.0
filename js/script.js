@@ -97,12 +97,11 @@ document.onreadystatechange = () => {
 
     //Projects
 
-    const cards = document.querySelectorAll(".cards");
-    const cardDeck = document.querySelector(".projectsCards");
-
     $(".cards").hover(function () {
       $(this).find("a").toggleClass("showLink");
       $(this).find("img").toggleClass("showCardImage");
+      $(this).find(".card").toggleClass("enlargeCard");
+      $(this).find(".cardTech").toggleClass("cardTechHide");
     });
   }
 };
