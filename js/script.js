@@ -98,10 +98,8 @@ document.onreadystatechange = () => {
     //Projects
 
     $(".cards").hover(function () {
-      $(this).find("a").toggleClass("showLink");
-      $(this).find("img").toggleClass("showCardImage");
-      $(this).find(".card").toggleClass("enlargeCard");
-      $(this).find(".cardTech").toggleClass("cardTechHide");
+      $(this).toggleClass("cardsAnimate");
+      $(this).find(".cardShadow").toggleClass("cardShadowAnime");
     });
   }
 };
