@@ -101,5 +101,9 @@ document.onreadystatechange = () => {
       $(this).toggleClass("cardsAnimate");
       $(this).find(".cardShadow").toggleClass("cardShadowAnime");
     });
+
+    $(".cards").click(function () {
+      $(".projectsPoitingHand").fadeTo("fast", 0);
+    });
   }
 };

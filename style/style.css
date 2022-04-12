@@ -959,9 +959,62 @@ nav a:hover {
   background-image: linear-gradient(to right, black, rgba(40, 49, 58, 0));
 }
 
+.projectsPoitingHand {
+  display: none;
+}
+
 @media screen and (max-width: 1550px) {
   .cards h1 {
     font-size: 30px;
+  }
+}
+
+@media screen and (max-width: 1085px) {
+  .projectsPoitingHand {
+    display: unset;
+    position: absolute;
+    right: 25%;
+    z-index: 20;
+    -webkit-transform: translateY(-45px);
+            transform: translateY(-45px);
+  }
+  .projectsPoitingHand h3 {
+    -webkit-transform: translateX(80px) translateY(-70px);
+            transform: translateX(80px) translateY(-70px);
+  }
+  .projectsPoitingHand svg {
+    -webkit-transform: rotate(205deg) rotateY(180deg);
+            transform: rotate(205deg) rotateY(180deg);
+    -webkit-animation: svgHand 2s ease infinite;
+            animation: svgHand 2s ease infinite;
+  }
+  @-webkit-keyframes svgHand {
+    0% {
+      -webkit-transform: rotate(205deg) rotateY(180deg) translateY(0px);
+              transform: rotate(205deg) rotateY(180deg) translateY(0px);
+    }
+    50% {
+      -webkit-transform: rotate(205deg) rotateY(180deg) translateY(20px);
+              transform: rotate(205deg) rotateY(180deg) translateY(20px);
+    }
+    100% {
+      -webkit-transform: rotate(205deg) rotateY(180deg) translateY(0px);
+              transform: rotate(205deg) rotateY(180deg) translateY(0px);
+    }
+  }
+  @keyframes svgHand {
+    0% {
+      -webkit-transform: rotate(205deg) rotateY(180deg) translateY(0px);
+              transform: rotate(205deg) rotateY(180deg) translateY(0px);
+    }
+    50% {
+      -webkit-transform: rotate(205deg) rotateY(180deg) translateY(20px);
+              transform: rotate(205deg) rotateY(180deg) translateY(20px);
+    }
+    100% {
+      -webkit-transform: rotate(205deg) rotateY(180deg) translateY(0px);
+              transform: rotate(205deg) rotateY(180deg) translateY(0px);
+    }
   }
 }
 

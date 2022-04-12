@@ -775,12 +775,51 @@ nav {
   background-image: linear-gradient(to right, rgb(0, 0, 0), rgba(40, 49, 58, 0));
 }
 
+.projectsPoitingHand {
+  display: none;
+}
+
 @media screen and (max-width: 1550px) {
 
   .cards {
   
     h1 {
       font-size: 30px;
+    }
+  }
+}
+
+@media screen and (max-width: 1085px) {
+
+  .projectsPoitingHand {
+    display: unset;
+    position: absolute;
+    right: 25%;
+    z-index: 20;
+  
+    transform: translateY(-45px);
+  
+    h3 {
+      transform: translateX(80px) translateY(-70px);
+    }
+  
+    svg {
+      transform: rotate(205deg) rotateY(180deg);
+      animation: svgHand 2s ease infinite;
+    }
+  }
+  
+  @keyframes svgHand {
+    0% {
+      transform: rotate(205deg) rotateY(180deg) translateY(0px);
+    }
+  
+    50% {
+      transform: rotate(205deg) rotateY(180deg) translateY(20px);
+    }
+  
+    100% {
+      transform: rotate(205deg) rotateY(180deg) translateY(0px);
     }
   }
 }
