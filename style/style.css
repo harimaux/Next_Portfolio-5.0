@@ -227,13 +227,13 @@ nav a:hover {
     cursor: pointer;
     z-index: 20;
   }
-  .mobileBtnLine1,
-  .mobileBtnLine2,
-  .mobileBtnLine3 {
+  .mobileBtnContainer div {
+    width: 35px;
+    height: 3px;
     background-color: #d8d8d8;
-    height: 2px;
-    width: 40px;
-    margin: 7px;
+    margin: 5px;
+    -webkit-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
   }
   .navToggle {
     -webkit-transform: translateY(0);
@@ -281,17 +281,17 @@ nav a:hover {
     border-bottom: none;
     padding-bottom: 0;
   }
-  /*   .mobileBtnLine1 {
-    transform: rotate(45deg) translateY(10.5px);
+  .mobileBtnLine1X {
+    -webkit-transform: rotate(-45deg) translate(-5px, 6px);
+            transform: rotate(-45deg) translate(-5px, 6px);
   }
-
-  .mobileBtnLine2 {
+  .mobileBtnLine2X {
     opacity: 0;
   }
-
-  .mobileBtnLine3 {
-    transform: rotate(-45deg) translateY(-10.5px);
-  } */
+  .mobileBtnLine3X {
+    -webkit-transform: rotate(45deg) translate(-5px, -6px);
+            transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
 
 @media screen and (max-width: 740px) {

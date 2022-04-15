@@ -193,15 +193,14 @@ nav {
     top: 20px;
     cursor: pointer;
     z-index: 20;
-  }
 
-  .mobileBtnLine1,
-  .mobileBtnLine2,
-  .mobileBtnLine3 {
-    background-color: $whiteFont;
-    height: 2px;
-    width: 40px;
-    margin: 7px;
+    div {
+      width: 35px;
+      height: 3px;
+      background-color: $whiteFont;
+      margin: 5px;
+      transition: 0.5s ease-in-out;
+    }
   }
 
   .navToggle {
@@ -245,17 +244,17 @@ nav {
     }
   }
 
-/*   .mobileBtnLine1 {
-    transform: rotate(45deg) translateY(10.5px);
+  .mobileBtnLine1X {
+    transform: rotate(-45deg) translate(-5px, 6px);
   }
 
-  .mobileBtnLine2 {
+  .mobileBtnLine2X {
     opacity: 0;
   }
 
-  .mobileBtnLine3 {
-    transform: rotate(-45deg) translateY(-10.5px);
-  } */
+  .mobileBtnLine3X {
+    transform: rotate(45deg) translate(-5px, -6px);
+  }
 }
 
 @media screen and (max-width: 740px) {
