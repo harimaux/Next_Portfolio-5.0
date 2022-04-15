@@ -956,6 +956,8 @@ nav a:hover {
 
 .projectsPoitingHand {
   display: none;
+  -webkit-transition: 0.5s ease;
+  transition: 0.5s ease;
 }
 
 @media screen and (max-width: 1550px) {

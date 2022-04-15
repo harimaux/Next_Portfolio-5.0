@@ -57,6 +57,8 @@ document.onreadystatechange = () => {
     //Mobile Menu
     const mobileBtn = document.querySelector(".mobileBtnContainer");
     const nav = document.querySelector("nav");
+
+    //Hides and show mobile menu
     mobileBtn.addEventListener("click", () => {
       nav.classList.toggle("navToggle");
     });
@@ -67,6 +69,7 @@ document.onreadystatechange = () => {
     const topDigitsDiv2 = document.querySelector(".topDigits2");
     setInterval(topDigitsFunction, 200);
 
+    //Generates red digits and displays them on screen
     function topDigitsFunction() {
       const newDigit = document.createElement("div");
       const newDigit2 = document.createElement("div");
@@ -87,6 +90,7 @@ document.onreadystatechange = () => {
       let countCreatedDivs = topDigitsDiv.getElementsByTagName("div").length;
       let countCreatedDivs2 = topDigitsDiv2.getElementsByTagName("div").length;
 
+      //Removes created divs with digits
       if (countCreatedDivs > 40) {
         topDigitsDiv.removeChild(topDigitsDiv.firstChild);
       }
@@ -97,13 +101,19 @@ document.onreadystatechange = () => {
 
     //Projects
 
+    //Trgiggers card animation
     $(".cards").hover(function () {
       $(this).toggleClass("cardsAnimate");
       $(this).find(".cardShadow").toggleClass("cardShadowAnime");
     });
 
-    $(".cards").click(function () {
+    /*     $(".cards").click(function () {
       $(".projectsPoitingHand").fadeTo("fast", 0);
+    }); */
+
+    const mobileHand = document.querySelector(".projectsPoitingHand");
+    mobileHand.addEventListener("click", () => {
+      mobileHand.style.opacity = "0";
     });
   }
 };
