@@ -220,36 +220,20 @@ nav a:hover {
 
 @media screen and (max-width: 1085px) {
   .mobileBtnContainer {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-            flex-direction: column;
+    display: block;
     position: fixed;
     right: 20px;
     top: 20px;
     cursor: pointer;
     z-index: 20;
   }
-  .mobileBtnLine1 {
-    background-color: #d8d8d8;
-    height: 3px;
-    width: 35px;
-    margin: 5px;
-  }
-  .mobileBtnLine2 {
-    background-color: #d8d8d8;
-    height: 3px;
-    width: 35px;
-    margin: 5px;
-  }
+  .mobileBtnLine1,
+  .mobileBtnLine2,
   .mobileBtnLine3 {
     background-color: #d8d8d8;
-    height: 3px;
-    width: 35px;
-    margin: 5px;
+    height: 2px;
+    width: 40px;
+    margin: 7px;
   }
   .navToggle {
     -webkit-transform: translateY(0);
@@ -296,6 +280,17 @@ nav a:hover {
   nav a:hover {
     border-bottom: none;
     padding-bottom: 0;
+  }
+  .mobileBtnLine1 {
+    -webkit-transform: rotate(45deg) translateY(10.5px);
+            transform: rotate(45deg) translateY(10.5px);
+  }
+  .mobileBtnLine2 {
+    opacity: 0;
+  }
+  .mobileBtnLine3 {
+    -webkit-transform: rotate(-45deg) translateY(-10.5px);
+            transform: rotate(-45deg) translateY(-10.5px);
   }
 }
 
@@ -1202,10 +1197,8 @@ form button {
 
 .footer p {
   padding: 1rem;
-  font-family: 'Beau Rivage', cursive;
   color: #414141;
-  font-weight: bolder;
-  font-size: large;
+  font-size: small;
 }
 
 @media screen and (max-width: 1350px) {

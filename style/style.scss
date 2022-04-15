@@ -187,8 +187,7 @@ nav {
 @media screen and (max-width: 1085px) {
 
   .mobileBtnContainer {
-    display: flex;
-    flex-direction: column;
+    display: block;
     position: fixed;
     right: 20px;
     top: 20px;
@@ -196,25 +195,13 @@ nav {
     z-index: 20;
   }
 
-  .mobileBtnLine1 {
-    background-color: $whiteFont;
-    height: 3px;
-    width: 35px;
-    margin: 5px;
-  }
-
-  .mobileBtnLine2 {
-    background-color: $whiteFont;
-    height: 3px;
-    width: 35px;
-    margin: 5px;
-  }
-
+  .mobileBtnLine1,
+  .mobileBtnLine2,
   .mobileBtnLine3 {
     background-color: $whiteFont;
-    height: 3px;
-    width: 35px;
-    margin: 5px;
+    height: 2px;
+    width: 40px;
+    margin: 7px;
   }
 
   .navToggle {
@@ -256,6 +243,18 @@ nav {
       border-bottom: none;
       padding-bottom: 0;
     }
+  }
+
+  .mobileBtnLine1 {
+    transform: rotate(45deg) translateY(10.5px);
+  }
+
+  .mobileBtnLine2 {
+    opacity: 0;
+  }
+
+  .mobileBtnLine3 {
+    transform: rotate(-45deg) translateY(-10.5px);
   }
 }
 
@@ -1006,10 +1005,8 @@ form {
 
   p {
     padding: 1rem;
-    font-family: 'Beau Rivage', cursive;
     color: $DarkFont;
-    font-weight: bolder;
-    font-size: large;
+    font-size: small;
   }
 }
 
