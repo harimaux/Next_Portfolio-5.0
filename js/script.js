@@ -121,8 +121,12 @@ document.onreadystatechange = () => {
     }); */
 
     const mobileHand = document.querySelector(".projectsPoitingHand");
-    mobileHand.addEventListener("click", () => {
-      mobileHand.style.opacity = "0";
-    });
+    const allCards = document.querySelectorAll(".cards");
+
+    for (let i = 0; i < allCards.length; i++) {
+      allCards[i].addEventListener("click", () => {
+        mobileHand.style.opacity = "0";
+      });
+    }
   }
 };
