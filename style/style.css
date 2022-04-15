@@ -281,17 +281,17 @@ nav a:hover {
     border-bottom: none;
     padding-bottom: 0;
   }
-  .mobileBtnLine1 {
-    -webkit-transform: rotate(45deg) translateY(10.5px);
-            transform: rotate(45deg) translateY(10.5px);
+  /*   .mobileBtnLine1 {
+    transform: rotate(45deg) translateY(10.5px);
   }
+
   .mobileBtnLine2 {
     opacity: 0;
   }
+
   .mobileBtnLine3 {
-    -webkit-transform: rotate(-45deg) translateY(-10.5px);
-            transform: rotate(-45deg) translateY(-10.5px);
-  }
+    transform: rotate(-45deg) translateY(-10.5px);
+  } */
 }
 
 @media screen and (max-width: 740px) {
