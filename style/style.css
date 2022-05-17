@@ -10,8 +10,9 @@
 body {
   /* background-image: linear-gradient(to right, rgb(47, 61, 85), rgb(47, 61, 85)); */
   /* background-image: linear-gradient(to right, rgb(87, 87, 87), rgb(47, 61, 85)); */
-  background-image: -webkit-gradient(linear, left top, right top, from(#13364b), to(#2f3d55));
-  background-image: linear-gradient(to right, #13364b, #2f3d55);
+  /* background-image: linear-gradient(to right, rgb(19, 54, 75), rgb(47, 61, 85)); */
+  background-image: -webkit-gradient(linear, left top, right top, from(#616161), to(#2f3d55));
+  background-image: linear-gradient(to right, #616161, #2f3d55);
   height: 100vh;
   font-family: 'Poppins', sans-serif;
   color: #d8d8d8;
