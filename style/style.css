@@ -409,53 +409,6 @@ nav a:hover {
           transform: rotate(136deg);
 }
 
-.topDigitsAnimation2 {
-  -webkit-animation: topDigitsAnimationFrames2 6s ease-in-out forwards;
-          animation: topDigitsAnimationFrames2 6s ease-in-out forwards;
-  position: absolute;
-  color: red;
-  font-size: 24px;
-  text-shadow: 0 0 7px red, 0 0 10px red, 0 0 21px red;
-}
-
-@-webkit-keyframes topDigitsAnimationFrames2 {
-  0% {
-    opacity: 70vh;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
-@keyframes topDigitsAnimationFrames2 {
-  0% {
-    opacity: 70vh;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-  25% {
-    opacity: 1;
-  }
-  75% {
-    opacity: 1;
-  }
-  100% {
-    opacity: 0;
-    -webkit-transform: translateY(0);
-            transform: translateY(0);
-  }
-}
-
 .topMoveDownCircle {
   position: absolute;
   bottom: 5vh;
@@ -904,8 +857,8 @@ nav a:hover {
           justify-content: end;
   position: relative;
   overflow: hidden;
-  -webkit-transition: 1 ease-in-out;
-  transition: 1 ease-in-out;
+  -webkit-transition: 1s ease-in-out;
+  transition: 1s ease-in-out;
 }
 
 .cards h1 {
@@ -1148,7 +1101,7 @@ form button {
 }
 
 .contactGit img {
-  width: 70px;
+  width: 40px;
 }
 
 .contactMap {
@@ -1258,7 +1211,7 @@ form button {
     margin: auto;
   }
   .contactGit img {
-    width: 60px;
+    width: 40px;
   }
   .contactMap2 {
     display: none;

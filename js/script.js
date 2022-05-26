@@ -87,12 +87,15 @@ document.onreadystatechange = () => {
       let randomPosition2 = Math.floor(
         Math.random() * topDigitsDiv2.clientWidth
       );
+
       newDigit.setAttribute("class", "topDigitsAnimation");
       newDigit.style = `margin-left: ${randomPosition}px`;
       newDigit.innerHTML = `${randomNumber}`;
+
       newDigit2.setAttribute("class", "topDigitsAnimation");
       newDigit2.style = `margin-left: ${randomPosition2}px`;
       newDigit2.innerHTML = `${randomNumber}`;
+
       topDigitsDiv.appendChild(newDigit);
       topDigitsDiv2.appendChild(newDigit2);
 
