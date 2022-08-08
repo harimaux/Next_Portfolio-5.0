@@ -119,12 +119,12 @@ document.onreadystatechange = () => {
       $(this).find(".cardShadow").toggleClass("cardShadowAnime");
     });
 
-    /*     $(".cards").click(function () {
-      $(".projectsPoitingHand").fadeTo("fast", 0);
-    }); */
-
     const mobileHand = document.querySelector(".projectsPoitingHand");
     const allCards = document.querySelectorAll(".cards");
+
+    mobileHand.addEventListener("click", () => {
+      mobileHand.style.opacity = "0";
+    });
 
     for (let i = 0; i < allCards.length; i++) {
       allCards[i].addEventListener("click", () => {
